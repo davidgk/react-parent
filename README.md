@@ -1,7 +1,7 @@
 # PARENT
 
 
-Base Project with angular 2 and Springboot to run together.
+Base Project with react and Springboot to run together.
 
 
 ## Dependencies
