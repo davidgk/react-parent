@@ -3,13 +3,36 @@ import Square from '../square/square.js';
 
 
 class Board extends React.Component {
+    X_PLAYER = 'X';
+    O_PLAYER = 'O';
+
+    constructor(props){
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+            xIsNext: true
+        };
+    }
 
     renderSquare(i){
-        return <Square />
+        return <Square
+            value={this.state.squares[i]}
+            onClick={() => this.handleClick(i)}
+        />
+    }
+
+    handleClick(i) {
+        const squares = this.state.squares.slice();
+        squares[i] = this.state.xIsNext? this.X_PLAYER: this.O_PLAYER;
+        this.setState({
+            squares: squares,
+            xIsNext: !this.state.xIsNext
+        });
+
     }
 
     render () {
-        const status = 'Next Player: X';
+        const status = `Next Player: ${this.state.xIsNext ? this.X_PLAYER : this.O_PLAYER}`;
 
         return (
            <div>
@@ -32,6 +55,7 @@ class Board extends React.Component {
            </div>
         );
     }
+
 }
 
 export default Board;
