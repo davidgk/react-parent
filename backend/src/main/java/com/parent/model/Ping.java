@@ -2,16 +2,13 @@ package com.parent.model;
 
 public class Ping {
 
-    public String myGreeting;
+    public String value;
 
     public Ping(){
     }
 
-    public Ping(String myGreeting) {
-        this.myGreeting = myGreeting;
+    public Ping(String value) {
+        this.value = value;
     }
 
-    public String getPingValue() {
-        return myGreeting;
-    }
 }
