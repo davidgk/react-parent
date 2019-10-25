@@ -22,6 +22,8 @@ target/
 #frontend
 frontend/src/main/frontend/node_modules
 frontend/target
+frontend/src/main/frontend/package-lock.json
+frontend/src/main/frontend/yarn.lock
 
 #backend
 backend/target
